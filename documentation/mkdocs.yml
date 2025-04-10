@@ -1,0 +1,13 @@
+site_name: My Docs
+theme:
+  name: 'material'
+
+nav:
+    - Home: index.md
+    - Array: array.md
+    - queue: queue.md
+    - graph: graph.md
+    - tree: tree.md
+    - linked_list: linked_list.md
+    - stack: stack.md
+    - __init__: __init__.md
