@@ -1,0 +1,1317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tree/">
+      
+      
+        <link rel="next" href="../stack/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>linked_list - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-des-classes-node-et-linkedlist" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              linked_list
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    queue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    graph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    linked_list
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    linked_list
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classe-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classe Node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classe Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self, data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__repr__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__repr__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classe-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classe LinkedList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classe LinkedList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertself-data-position0" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert(self, data, position=0)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert(self, data, position=0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptions :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteself-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete(self, position)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete(self, position)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptions :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchself-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      search(self, data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search(self, data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traverseself" class="md-nav__link">
+    <span class="md-ellipsis">
+      traverse(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="traverse(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__len__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__str__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __str__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__str__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'utilisation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../__init__/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    __init__
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classe-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classe Node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classe Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self, data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self, data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__repr__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __repr__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__repr__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classe-linkedlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classe LinkedList
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classe LinkedList">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertself-data-position0" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert(self, data, position=0)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert(self, data, position=0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptions :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteself-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete(self, position)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete(self, position)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceptions :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchself-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      search(self, data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search(self, data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traverseself" class="md-nav__link">
+    <span class="md-ellipsis">
+      traverse(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="traverse(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__len__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __len__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__len__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__str__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __str__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__str__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'utilisation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentation-des-classes-node-et-linkedlist">Documentation des classes <code>Node</code> et <code>LinkedList</code></h1>
+<p>Les classes <code>Node</code> et <code>LinkedList</code> implémentent une liste simplement chaînée. La classe <code>Node</code> représente un élément de la liste, et la classe <code>LinkedList</code> gère la liste elle-même avec des méthodes pour insérer, supprimer, rechercher et parcourir les éléments.</p>
+<h2 id="classe-node">Classe <code>Node</code></h2>
+<p>La classe <code>Node</code> représente un noeud individuel dans la liste chaînée. Chaque noeud contient des données et une référence vers le prochain noeud dans la liste.</p>
+<h3 id="attributs">Attributs</h3>
+<ul>
+<li><code>data</code> : Les données stockées dans le noeud.</li>
+<li><code>next</code> : Référence vers le prochain noeud dans la liste (par défaut <code>None</code>).</li>
+</ul>
+<h3 id="methodes">Méthodes</h3>
+<h4 id="__init__self-data"><code>__init__(self, data)</code></h4>
+<p>Initialise un nouveau noeud avec les données fournies.</p>
+<h5 id="arguments">Arguments :</h5>
+<ul>
+<li><code>data</code> : Les données à stocker dans le noeud.</li>
+</ul>
+<h4 id="__repr__self"><code>__repr__(self)</code></h4>
+<p>Retourne une représentation sous forme de chaîne du noeud.</p>
+<h5 id="retour">Retour :</h5>
+<ul>
+<li>Une chaîne représentant le noeud, par exemple <code>Node(5)</code>.</li>
+</ul>
+<h2 id="classe-linkedlist">Classe <code>LinkedList</code></h2>
+<p>La classe <code>LinkedList</code> implémente une liste simplement chaînée avec des méthodes pour insérer, supprimer, rechercher, et parcourir les éléments.</p>
+<h3 id="attributs_1">Attributs</h3>
+<ul>
+<li><code>head</code> : Référence vers le premier noeud de la liste (par défaut <code>None</code>).</li>
+<li><code>size</code> : Taille de la liste, c'est-à-dire le nombre d'éléments dans la liste.</li>
+</ul>
+<h3 id="methodes_1">Méthodes</h3>
+<h4 id="__init__self"><code>__init__(self)</code></h4>
+<p>Initialise une nouvelle liste chaînée vide.</p>
+<h5 id="retour_1">Retour :</h5>
+<ul>
+<li>Aucun retour. La méthode initialise une liste vide.</li>
+</ul>
+<h4 id="insertself-data-position0"><code>insert(self, data, position=0)</code></h4>
+<p>Insère un nouveau noeud contenant <code>data</code> à la position spécifiée dans la liste.</p>
+<h5 id="arguments_1">Arguments :</h5>
+<ul>
+<li><code>data</code> : Les données à insérer dans le nouveau noeud.</li>
+<li><code>position</code> : La position (index basé sur 0) où insérer le noeud. Par défaut, le noeud est inséré au début de la liste (<code>position=0</code>).</li>
+</ul>
+<h5 id="exceptions">Exceptions :</h5>
+<ul>
+<li><code>IndexError</code> : Si la position spécifiée est en dehors des limites de la liste.</li>
+</ul>
+<h5 id="retour_2">Retour :</h5>
+<ul>
+<li>Aucun retour. Le noeud est inséré à la position spécifiée.</li>
+</ul>
+<h4 id="deleteself-position"><code>delete(self, position)</code></h4>
+<p>Supprime le noeud à la position spécifiée dans la liste.</p>
+<h5 id="arguments_2">Arguments :</h5>
+<ul>
+<li><code>position</code> : La position (index basé sur 0) du noeud à supprimer.</li>
+</ul>
+<h5 id="exceptions_1">Exceptions :</h5>
+<ul>
+<li><code>IndexError</code> : Si la position spécifiée est en dehors des limites de la liste ou si la liste est vide.</li>
+</ul>
+<h5 id="retour_3">Retour :</h5>
+<ul>
+<li>Aucun retour. Le noeud est supprimé de la liste.</li>
+</ul>
+<h4 id="searchself-data"><code>search(self, data)</code></h4>
+<p>Recherche un noeud contenant <code>data</code> dans la liste.</p>
+<h5 id="arguments_3">Arguments :</h5>
+<ul>
+<li><code>data</code> : Les données à rechercher dans la liste.</li>
+</ul>
+<h5 id="retour_4">Retour :</h5>
+<ul>
+<li>La position du premier noeud contenant <code>data</code> si trouvé.</li>
+<li><code>-1</code> si <code>data</code> n'est pas trouvé dans la liste.</li>
+</ul>
+<h4 id="traverseself"><code>traverse(self)</code></h4>
+<p>Retourne une liste contenant toutes les données des noeuds de la liste chaînée.</p>
+<h5 id="retour_5">Retour :</h5>
+<ul>
+<li>Une liste des données dans l'ordre de la liste chaînée.</li>
+</ul>
+<h4 id="__len__self"><code>__len__(self)</code></h4>
+<p>Retourne la taille de la liste chaînée.</p>
+<h5 id="retour_6">Retour :</h5>
+<ul>
+<li>Le nombre d'éléments dans la liste.</li>
+</ul>
+<h4 id="__str__self"><code>__str__(self)</code></h4>
+<p>Retourne une représentation sous forme de chaîne de la liste chaînée.</p>
+<h5 id="retour_7">Retour :</h5>
+<ul>
+<li>Une chaîne représentant la liste chaînée. Les noeuds sont séparés par " -&gt; ".</li>
+<li>Si la liste est vide, retourne "Empty LinkedList".</li>
+</ul>
+<h2 id="exemple-dutilisation">Exemple d'utilisation</h2>
+<p>```python</p>
+<h1 id="creation-dune-liste-chainee">Création d'une liste chaînée</h1>
+<p>ll = LinkedList()</p>
+<h1 id="insertion-de-noeuds">Insertion de noeuds</h1>
+<p>ll.insert(10)
+ll.insert(20)
+ll.insert(30, position=1)</p>
+<h1 id="affichage-de-la-liste">Affichage de la liste</h1>
+<p>print(ll)  # Affiche : 10 -&gt; 30 -&gt; 20</p>
+<h1 id="recherche-dun-element">Recherche d'un élément</h1>
+<p>print(ll.search(20))  # Affiche : 2
+print(ll.search(40))  # Affiche : -1</p>
+<h1 id="traversee-de-la-liste">Traversée de la liste</h1>
+<p>print(ll.traverse())  # Affiche : [10, 30, 20]</p>
+<h1 id="suppression-dun-noeud">Suppression d'un noeud</h1>
+<p>ll.delete(1)  # Supprime le noeud à la position 1 (30)</p>
+<h1 id="affichage-apres-suppression">Affichage après suppression</h1>
+<p>print(ll)  # Affiche : 10 -&gt; 20</p>
+<h1 id="taille-de-la-liste">Taille de la liste</h1>
+<p>print(len(ll))  # Affiche : 2</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

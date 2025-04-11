@@ -1,0 +1,1408 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../graph/">
+      
+      
+        <link rel="next" href="../linked_list/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>tree - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentation-de-la-classe-binarysearchtree" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              tree
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../array/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Array
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    queue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    graph
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    tree
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    tree
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertself-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert(self, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert(self, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_insert_recursiveself-node-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      _insert_recursive(self, node, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_insert_recursive(self, node, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchself-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      search(self, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search(self, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_search_recursiveself-node-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      _search_recursive(self, node, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_search_recursive(self, node, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      inorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_inorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _inorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_inorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      preorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="preorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _preorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_preorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      postorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_postorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _postorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_postorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__str__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __str__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__str__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'utilisation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linked_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    linked_list
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../__init__/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    __init__
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__init__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertself-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert(self, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="insert(self, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_insert_recursiveself-node-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      _insert_recursive(self, node, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_insert_recursive(self, node, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchself-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      search(self, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search(self, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_search_recursiveself-node-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      _search_recursive(self, node, value)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_search_recursive(self, node, value)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      inorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_inorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _inorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_inorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      preorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="preorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_preorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _preorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_preorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postorder_traversalself" class="md-nav__link">
+    <span class="md-ellipsis">
+      postorder_traversal(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postorder_traversal(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_postorder_recursiveself-node-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      _postorder_recursive(self, node, result)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="_postorder_recursive(self, node, result)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retour_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__str__self" class="md-nav__link">
+    <span class="md-ellipsis">
+      __str__(self)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__str__(self)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retour_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retour :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'utilisation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentation-de-la-classe-binarysearchtree">Documentation de la classe <code>BinarySearchTree</code></h1>
+<p>La classe <code>BinarySearchTree</code> implémente un arbre binaire de recherche (BST) permettant d'insérer des éléments, de les rechercher, et de traverser l'arbre de différentes manières (infixe, préfixe et postfixe).</p>
+<h2 id="attributs">Attributs</h2>
+<ul>
+<li><code>root</code> : Le nœud racine de l'arbre, initialisé à <code>None</code>.</li>
+</ul>
+<h2 id="methodes">Méthodes</h2>
+<h3 id="__init__self"><code>__init__(self)</code></h3>
+<p>Initialise un nouvel arbre binaire de recherche (BST) vide.</p>
+<h4 id="retour">Retour :</h4>
+<ul>
+<li>Aucun retour. L'arbre est initialisé avec une racine <code>None</code>.</li>
+</ul>
+<h3 id="insertself-value"><code>insert(self, value)</code></h3>
+<p>Insère une valeur dans l'arbre binaire de recherche (BST).</p>
+<h4 id="arguments">Arguments :</h4>
+<ul>
+<li><code>value</code> : La valeur à insérer dans l'arbre.</li>
+</ul>
+<h4 id="retour_1">Retour :</h4>
+<ul>
+<li>Aucun retour. La valeur est insérée dans l'arbre.</li>
+</ul>
+<h3 id="_insert_recursiveself-node-value"><code>_insert_recursive(self, node, value)</code></h3>
+<p>Méthode auxiliaire pour l'insertion récursive dans l'arbre.</p>
+<h4 id="arguments_1">Arguments :</h4>
+<ul>
+<li><code>node</code> : Le nœud actuel à partir duquel la recherche d'insertion commence.</li>
+<li><code>value</code> : La valeur à insérer dans l'arbre.</li>
+</ul>
+<h4 id="retour_2">Retour :</h4>
+<ul>
+<li>Aucun retour. La valeur est insérée récursivement à la position correcte dans l'arbre.</li>
+</ul>
+<h3 id="searchself-value"><code>search(self, value)</code></h3>
+<p>Recherche une valeur dans l'arbre binaire de recherche (BST).</p>
+<h4 id="arguments_2">Arguments :</h4>
+<ul>
+<li><code>value</code> : La valeur à rechercher dans l'arbre.</li>
+</ul>
+<h4 id="retour_3">Retour :</h4>
+<ul>
+<li><code>True</code> si la valeur est trouvée dans l'arbre, <code>False</code> sinon.</li>
+</ul>
+<h3 id="_search_recursiveself-node-value"><code>_search_recursive(self, node, value)</code></h3>
+<p>Méthode auxiliaire pour la recherche récursive d'une valeur dans l'arbre.</p>
+<h4 id="arguments_3">Arguments :</h4>
+<ul>
+<li><code>node</code> : Le nœud actuel où la recherche commence.</li>
+<li><code>value</code> : La valeur à rechercher dans l'arbre.</li>
+</ul>
+<h4 id="retour_4">Retour :</h4>
+<ul>
+<li><code>True</code> si la valeur est trouvée dans l'arbre, <code>False</code> sinon.</li>
+</ul>
+<h3 id="inorder_traversalself"><code>inorder_traversal(self)</code></h3>
+<p>Retourne une liste des valeurs de l'arbre en utilisant un parcours infixe (inorder).</p>
+<h4 id="retour_5">Retour :</h4>
+<ul>
+<li>Une liste des valeurs de l'arbre en ordre croissant.</li>
+</ul>
+<h3 id="_inorder_recursiveself-node-result"><code>_inorder_recursive(self, node, result)</code></h3>
+<p>Méthode auxiliaire pour le parcours infixe récursif de l'arbre.</p>
+<h4 id="arguments_4">Arguments :</h4>
+<ul>
+<li><code>node</code> : Le nœud actuel pour le parcours.</li>
+<li><code>result</code> : La liste qui contient les valeurs du parcours.</li>
+</ul>
+<h4 id="retour_6">Retour :</h4>
+<ul>
+<li>Aucun retour. Les valeurs sont ajoutées à la liste <code>result</code> par récursion.</li>
+</ul>
+<h3 id="preorder_traversalself"><code>preorder_traversal(self)</code></h3>
+<p>Retourne une liste des valeurs de l'arbre en utilisant un parcours préfixe (preorder).</p>
+<h4 id="retour_7">Retour :</h4>
+<ul>
+<li>Une liste des valeurs de l'arbre dans l'ordre préfixe.</li>
+</ul>
+<h3 id="_preorder_recursiveself-node-result"><code>_preorder_recursive(self, node, result)</code></h3>
+<p>Méthode auxiliaire pour le parcours préfixe récursif de l'arbre.</p>
+<h4 id="arguments_5">Arguments :</h4>
+<ul>
+<li><code>node</code> : Le nœud actuel pour le parcours.</li>
+<li><code>result</code> : La liste qui contient les valeurs du parcours.</li>
+</ul>
+<h4 id="retour_8">Retour :</h4>
+<ul>
+<li>Aucun retour. Les valeurs sont ajoutées à la liste <code>result</code> par récursion.</li>
+</ul>
+<h3 id="postorder_traversalself"><code>postorder_traversal(self)</code></h3>
+<p>Retourne une liste des valeurs de l'arbre en utilisant un parcours postfixe (postorder).</p>
+<h4 id="retour_9">Retour :</h4>
+<ul>
+<li>Une liste des valeurs de l'arbre dans l'ordre postfixe.</li>
+</ul>
+<h3 id="_postorder_recursiveself-node-result"><code>_postorder_recursive(self, node, result)</code></h3>
+<p>Méthode auxiliaire pour le parcours postfixe récursif de l'arbre.</p>
+<h4 id="arguments_6">Arguments :</h4>
+<ul>
+<li><code>node</code> : Le nœud actuel pour le parcours.</li>
+<li><code>result</code> : La liste qui contient les valeurs du parcours.</li>
+</ul>
+<h4 id="retour_10">Retour :</h4>
+<ul>
+<li>Aucun retour. Les valeurs sont ajoutées à la liste <code>result</code> par récursion.</li>
+</ul>
+<h3 id="__str__self"><code>__str__(self)</code></h3>
+<p>Retourne une représentation sous forme de chaîne de caractères de l'arbre binaire de recherche en utilisant un parcours infixe.</p>
+<h4 id="retour_11">Retour :</h4>
+<ul>
+<li>Une chaîne de caractères représentant les valeurs de l'arbre dans l'ordre infixe sous la forme de liste.</li>
+</ul>
+<h2 id="exemple-dutilisation">Exemple d'utilisation</h2>
+<p>```python</p>
+<h1 id="creation-dun-arbre-binaire-de-recherche">Création d'un arbre binaire de recherche</h1>
+<p>bst = BinarySearchTree()</p>
+<h1 id="insertion-des-valeurs">Insertion des valeurs</h1>
+<p>bst.insert(10)
+bst.insert(5)
+bst.insert(15)
+bst.insert(2)
+bst.insert(7)
+bst.insert(12)
+bst.insert(18)</p>
+<h1 id="recherche-dune-valeur-dans-larbre">Recherche d'une valeur dans l'arbre</h1>
+<p>print(bst.search(7))  # Affiche : True
+print(bst.search(20))  # Affiche : False</p>
+<h1 id="parcours-infixe-inorder">Parcours infixe (inorder)</h1>
+<p>print(bst.inorder_traversal())  # Affiche : [2, 5, 7, 10, 12, 15, 18]</p>
+<h1 id="parcours-prefixe-preorder">Parcours préfixe (preorder)</h1>
+<p>print(bst.preorder_traversal())  # Affiche : [10, 5, 2, 7, 15, 12, 18]</p>
+<h1 id="parcours-postfixe-postorder">Parcours postfixe (postorder)</h1>
+<p>print(bst.postorder_traversal())  # Affiche : [2, 7, 5, 12, 18, 15, 10]</p>
+<h1 id="affichage-de-larbre-sous-forme-de-chaine">Affichage de l'arbre sous forme de chaîne</h1>
+<p>print(bst)  # Affiche : [2, 5, 7, 10, 12, 15, 18]</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
